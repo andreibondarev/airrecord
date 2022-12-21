@@ -16,5 +16,13 @@ module Airtable
     def table(app_token, worksheet_name)
       Table.new(@api_key, app_token, worksheet_name)
     end
+
+    def list_bases
+      Base.new(@api_key).list
+    end
+
+    def list_tables(app_token)
+      Base.new(@api_key, app_token).schema(app_token)
+    end
   end # Client
 end # Airtable

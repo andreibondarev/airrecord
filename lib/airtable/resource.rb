@@ -7,7 +7,7 @@ module Airtable
 
     attr_reader :api_key, :app_token, :worksheet_name
 
-    def initialize(api_key, app_token, worksheet_name)
+    def initialize(api_key, app_token = nil, worksheet_name = nil)
       @api_key = api_key
       @app_token = app_token
       @worksheet_name = worksheet_name
