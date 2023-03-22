@@ -21,7 +21,6 @@ module Airtable
     # Options: limit = 100, offset = "as345g", sort = ["Name", "asc"]
     # records(:sort => ["Name", :desc], :limit => 50, :offset => "as345g")
     def records(options={})
-      binding.pry
       options["sortField"], options["sortDirection"] = options.delete(:sort) if options[:sort]
       results = self.class.get(worksheet_url, query: options).parsed_response
       check_and_raise_error(results)
